@@ -69,4 +69,29 @@ def parse_notes(text):
 
     return phrase
 
+if __name__ == '__main__':
+    import argparse
+    
+    argparser = argparse.ArgumentParser(description = "Transpose a music phrase")
 
+    argparser.add_argument(
+        'phrase',
+        metavar='phrase',
+        type = str,
+        help = "A music phrase, e.g. 'A2 C2 G#4'"
+        )
+
+    argparser.add_argument(
+        'by',
+        metavar='by',
+        type = int,
+        help = "The value to transpose by, e.g. 1: 'A2 C2 G#4' => 'A#2 C#2 A4'"
+        )
+
+    args = argparser.parse_args()
+
+    notes = parse_notes(args.phrase)
+    for note in notes:
+        note.transpose(args.by)
+        print (note, end=" ")
+    print()
