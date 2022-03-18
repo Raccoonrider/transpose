@@ -82,8 +82,8 @@ if __name__ == '__main__':
         )
 
     argparser.add_argument(
-        'by',
-        metavar='by',
+        'transpose_by',
+        metavar='transpose_by',
         type = int,
         help = "The value to transpose by, e.g. 1: 'A2 C2 G#4' => 'A#2 C#2 A4'"
         )
