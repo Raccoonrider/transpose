@@ -92,6 +92,6 @@ if __name__ == '__main__':
 
     notes = parse_notes(args.phrase)
     for note in notes:
-        note.transpose(args.by)
+        note.transpose(args.transpose_by)
         print (note, end=" ")
     print()
